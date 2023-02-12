@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Montserrat:wght@300&display=swap');
+/*font-family: 'Fraunces', serif;
+font-family: 'Montserrat', sans-serif;*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+img {
+    display: block;
+    width: 100%;
+}
+:root {
+    --CHECKOUT-COLOR:hsl(158, 36%, 37%);
+    --BGCOLOR:  hsl(30, 38%, 92%);
+    --ACTIVE-COLOR: hsl(212, 21%, 14%);
+    --EXP-COLOR: hsl(228, 12%, 48%);
+    --CARD-BGCOLOR : WHITE;
+    --NORMALFONT :  'Montserrat', sans-serif;
+    --H1-FONT: 'Fraunces', serif;
+
+}
+.nowrap {
+    white-space: nowrap;
+}
+body
+{
+    background: var(--BGCOLOR);
+    font-family: var(--NORMALFONT);
+    width: 100vw;
+    height: 100vh;
+}
+
+.card {
+    background-color: var(--CARD-BGCOLOR);
+    width: 80%;
+    margin: 5% auto;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 2rem;
+}
+.card h1 , .card .realprice {
+    font-family: var(--H1-FONT);
+}
+.card picture {
+    
+    order: -5;
+}
+.card img {
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+   
+}
+.perfume {
+    order: -4;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+}
+.card .realprice {
+    color: var(--CHECKOUT-COLOR);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 1.5rem;
+    float: left;
+    width: fit-content;
+}
+.card .normalprice {
+     
+    text-decoration: line-through;
+   
+    
+    
+ }
+.checkout {
+    text-decoration: none;
+    color: white;
+    background-color: var(--CHECKOUT-COLOR);
+    text-align: center;
+    width: 80%;
+    margin: 0px auto;
+    font-weight: 800;
+    border-radius: 0.5rem;
+    max-height: 2rem;
+}
+a::before {
+    content: '🛒';
+}
+a:hover {
+    background-color: var(--ACTIVE-COLOR);
+    
+}
+.price {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (min-width: 1439px){
+    .card {
+        margin: 15% auto;
+        max-width: 50%;
+        max-height: 70vh;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+        "pi p"
+        "pi p"
+        "pi p"
+        "pi pr"
+        "pi ck"
+        ;
+       
+    }
+    .card picture {
+        grid-area: pi;
+        height: 100%;
+        display: block;
+        margin-right: 2rem;
+        
+    }
+    .card .info , .card .price, .card h1{
+        height: fit-content;
+    }
+    .perfume {
+        display: grid;
+        place-content: center;
+    }
+    .card img {
+        height: 100%;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 2rem;
+    }
+    
+    .checkout{
+        grid-area: ck;
+    }
+    .price {
+        grid-area: pr;
+        margin: 0px;
+       
+    }
+     
+}
